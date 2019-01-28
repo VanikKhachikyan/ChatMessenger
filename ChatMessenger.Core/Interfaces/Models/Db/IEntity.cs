@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChatMessenger.Core.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
         [Key]
         int Id { get; set; }
