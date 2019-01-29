@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace ChatMessenger.DataAccessLayer.UnitOfWorks
 {
-    class RepositoriesUnitOfWorks : IRepositoriesUnitOfWork
+    public class RepositoriesUnitOfWorks : IRepositoriesUnitOfWork
     {
         protected readonly ChatMessengerDbContext _dbContext;
         protected IUserRepository _userRepository;
         protected IMessageRepository _messageRepository;
+        protected IUserTokenSessionRepository _userTokenSessionRepository;
+
 
         public RepositoriesUnitOfWorks(ChatMessengerDbContext dbContext)
         {
@@ -43,6 +45,17 @@ namespace ChatMessenger.DataAccessLayer.UnitOfWorks
                 }
 
                 return _messageRepository;
+            }
+        }
+
+        public virtual IUserTokenSessionRepository UserTokenSessions
+        {
+            get
+            {
+                if (_userTokenSessionRepository == null)
+                    _userTokenSessionRepository = new UserTokenSessionRepository(_dbContext);
+
+                return _userTokenSessionRepository;
             }
         }
 

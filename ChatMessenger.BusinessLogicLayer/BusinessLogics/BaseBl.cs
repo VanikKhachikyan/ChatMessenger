@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ChatMessenger.BusinessLogicLayer.BusinessLogics
 {
-    class BaseBl : IDisposable
+    public class BaseBl : IDisposable
     {
         protected readonly IRepositoriesUnitOfWork _repos;
         protected readonly IMapper _mapper;

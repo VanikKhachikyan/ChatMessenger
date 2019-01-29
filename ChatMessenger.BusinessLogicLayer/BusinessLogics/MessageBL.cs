@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ChatMessenger.BusinessLogicLayer.BusinessLogics
 {
-    class MessageBL : BaseBl
+    public class MessageBL : BaseBl
     {
         public MessageBL(IRepositoriesUnitOfWork repos, IMapper mapper)
           : base(repos, mapper)

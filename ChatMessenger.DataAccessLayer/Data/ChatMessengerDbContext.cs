@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ChatMessenger.DataAccessLayer.Data
 {
-    class ChatMessengerDbContext : DbContext
+    public class ChatMessengerDbContext : DbContext
     {
         public ChatMessengerDbContext(DbContextOptions<ChatMessengerDbContext> options)
             : base(options)
