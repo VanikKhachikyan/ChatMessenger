@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChatMessenger.Core.Interfaces.Repositories
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserTokenSessionRepository : IGenericRepository<UserTokenSession>
     {
-        Task<bool> CheckingEmailExists(string email);
-        Task<User> GetUserByEmailAndPassword(string email, string password);
+        Task<UserTokenSession> GetClientTokenSessionByTokenAsync(string token);
     }
 }
